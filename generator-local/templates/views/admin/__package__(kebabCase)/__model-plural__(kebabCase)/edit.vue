@@ -22,8 +22,8 @@
 </template>
 <script lang="ts">
 import { defineComponent, ref } from 'vue'
-import AdminCommonForm from '@/../../../../../../packages/motor-core/components/admin/common/Form.vue'
-import FormsInputField from '@/../../../../../../packages/motor-core/components/forms/InputField.vue'
+import AdminCommonForm from 'motor-core/components/admin/common/Form.vue'
+import FormsInputField from 'motor-core/components/forms/InputField.vue'
 import { useI18n } from 'vue-i18n'
 import { useRouter } from 'vue-router'
 import form from '@/forms/__package__(kebabCase)/__model__(camelCase)Form'

@@ -1,5 +1,5 @@
 import axios from 'axios'
-import baseForm from '../../../../packages/motor-core/forms/baseForm'
+import baseForm from 'motor-core/forms/baseForm'
 import * as yup from 'yup'
 import { ref } from 'vue'
 import { useI18n } from 'vue-i18n'

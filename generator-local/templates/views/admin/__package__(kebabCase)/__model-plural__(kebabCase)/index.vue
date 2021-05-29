@@ -19,11 +19,11 @@
 </template>
 
 <script lang="ts">
-import AdminCommonGrid from '@/../../../../../../packages/motor-core/components/admin/common/Grid.vue'
+import AdminCommonGrid from 'motor-core/components/admin/common/Grid.vue'
 import { defineComponent, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
-import EditButton from '@/../../../../../../packages/motor-core/components/admin/cell/EditButton.vue'
-import DeleteButton from '@/../../../../../../packages/motor-core/components/admin/cell/DeleteButton.vue'
+import EditButton from 'motor-core/components/admin/cell/EditButton.vue'
+import DeleteButton from 'motor-core/components/admin/cell/DeleteButton.vue'
 import grid from '@/grids/__package__(kebabCase)/__model__(camelCase)Grid'
 
 export default defineComponent({

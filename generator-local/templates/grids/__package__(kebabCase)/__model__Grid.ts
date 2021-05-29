@@ -1,5 +1,5 @@
 import axios from 'axios'
-import baseGrid from '../../../../packages/motor-core/grids/baseGrid'
+import baseGrid from 'motor-core/grids/baseGrid'
 import modelRepository from '@/api/__package__(kebabCase)/__model__(camelCase)'
 
 export default function __model__(camelCase)Grid() {
