@@ -6,7 +6,7 @@ generateTemplateFiles([
     option: 'Create module',
     defaultCase: '(pascalCase)',
     entry: {
-      folderPath: './generator/templates/',
+      folderPath: './generator-local/templates/',
     },
     stringReplacers: ['__package__', '__model__', '__model-plural__'],
     output: {
