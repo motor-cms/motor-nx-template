@@ -87,7 +87,8 @@
     "rules": {
       "no-unused-vars": "off",
       "no-redeclare": "off",
-      "no-extra-semi": "off"
+      "no-extra-semi": "off",
+      "no-case-declarations": "off"
     }
   },
   "browserslist": [
