@@ -80,6 +80,17 @@ languageModules.push(
 )
 
 /**
+ * Partymeister-Accouting
+ */
+languageModules.push(
+    require.context(
+        'partymeister-accounting/locales',
+        true,
+        /[A-Za-z0-9-_,\s]+\.json$/i
+    )
+)
+
+/**
  * Motor-Backend
  */
 languageModules.push(

@@ -16,6 +16,7 @@ const routerModules = []
 
 routerModules.push(require.context('motor-media/routes', true, /.ts$/i))
 routerModules.push(require.context('partymeister-core/routes', true, /.ts$/i))
+routerModules.push(require.context('partymeister-accounting/routes', true, /.ts$/i))
 routerModules.push(require.context('motor-backend/routes', true, /.ts$/i))
 routerModules.push(require.context('motor-core/routes', true, /.ts$/i))
 
