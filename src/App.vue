@@ -5,7 +5,8 @@
 import AuthLayout from 'motor-core/layouts/AuthLayout.vue'
 import AdminLayout from 'motor-core/layouts/AdminLayout.vue'
 
-import { defineComponent } from 'vue'
+import {defineComponent, ref, watch} from 'vue'
+import {useRoute} from "vue-router";
 
 export default defineComponent({
   name: 'admin-backend',
@@ -13,19 +14,19 @@ export default defineComponent({
     AuthLayout,
     AdminLayout,
   },
-  data() {
-    return {
-      layout: <string>'',
-    }
-  },
-  watch: {
-    $route(to: any): void {
+  setup() {
+    const layout = ref<string>('');
+    const route = useRoute();
+    watch(route, async (to, from) => {
       if (to.meta.layout !== undefined) {
-        this.layout = <string>to.meta.layout
+        layout.value = to.meta.layout as string
       } else {
-        this.layout = 'AdminLayout' // this is default layout if route meta is not set
+        layout.value = 'AdminLayout' // this is default layout if route meta is not set
       }
-    },
+    })
+    return {
+      layout
+    }
   },
 })
 </script>
