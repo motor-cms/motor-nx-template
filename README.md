@@ -1,24 +1,16 @@
-# motor-vue
+# motor-nx-template
 
-## Project setup
-```
-npm install
-```
+## Installation
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+    mkdir packages
+    cd packages
+    git clone git@github.com:motor-cms/motor-nx-core.git
+    git clone git@github.com:motor-cms/motor-nx-media.git
+    git clone git@github.com:motor-cms/motor-nx-backend.git
+    git clone git@github.com:partymeister/partymeister-nx-core.git
+    git clone git@github.com:partymeister/partymeister-nx-accounting.git
+    cd ..
+    npm install
+    npm run serve
 
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+Login with motor@esmaili.info / admin
