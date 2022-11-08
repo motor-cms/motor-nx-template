@@ -27,8 +27,6 @@
     "motor-backend": "file:packages/motor-nx-backend",
     "motor-core": "file:packages/motor-nx-core",
     "motor-media": "file:packages/motor-nx-media",
-    "partymeister-accounting": "file:packages/partymeister-nx-accounting",
-    "partymeister-core": "file:packages/partymeister-nx-core",
     "vee-validate": "^4.5.2",
     "vue": "^3.2.20",
     "vue-axios": "^3.3.7",
