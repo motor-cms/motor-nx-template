@@ -8,8 +8,8 @@ import { createI18n, LocaleMessages, VueMessageType } from 'vue-i18n'
  * See: https://github.com/intlify/vue-i18n-loader#rocket-i18n-resource-pre-compilation
  */
 async function loadLocaleMessages(
-  locales,
-  isPackage = false
+    locales,
+    isPackage = false
 ): LocaleMessages<VueMessageType> {
   const messages: LocaleMessages<VueMessageType> = {}
   for (const key of Object.keys(locales)) {
@@ -17,7 +17,7 @@ async function loadLocaleMessages(
     // Recursively go through the languages folder and read all json files in the directories and build the messages object
     // This allows us to split the language variables in separate files
     await key.split('/').reduce(async (re, e) => {
-      const module = await locales[key]()
+      const module = await locales[key]
       const r = await re
 
       // If we find a json file in the path, read the variables from it and assign it to the object
@@ -29,10 +29,10 @@ async function loadLocaleMessages(
       // Strip the .json file ending from the path fragment
       e = e.replace('.json', '')
       if (
-        e !== '.' &&
-        e != '..' &&
-        e != 'node_modules' &&
-        e != 'locales'
+          e !== '.' &&
+          e != '..' &&
+          e != 'node_modules' &&
+          e != 'locales'
       ) {
         return r[e] || (r[e] = variables);
       }
@@ -58,7 +58,7 @@ const merge = (target, source) => {
   return target
 }
 
-const baseLocales = import.meta.glob('./locales/**/*.json')
+const baseLocales = import.meta.glob('./locales/**/*.json', { eager: true })
 
 let messages = await loadLocaleMessages(baseLocales, false)
 
@@ -69,21 +69,21 @@ const languageModules = []
  * Motor-Media
  */
 languageModules.push(
-  import.meta.glob('../node_modules/motor-media/locales/**/*.json')
+    import.meta.glob('../node_modules/motor-media/locales/**/*.json', { eager: true })
 )
 
 /**
  * Motor-Backend
  */
 languageModules.push(
-  import.meta.glob('../node_modules/motor-backend/locales/**/*.json')
+    import.meta.glob('../node_modules/motor-backend/locales/**/*.json', { eager: true })
 )
 
 /**
  * Motor-Core
  */
 languageModules.push(
-  import.meta.glob('../node_modules/motor-core/locales/**/*.json')
+    import.meta.glob('../node_modules/motor-core/locales/**/*.json', { eager: true })
 )
 
 languageModules.forEach(async (module) => {
