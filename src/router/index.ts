@@ -2,34 +2,23 @@ import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
 
 let routes: Array<RouteRecordRaw> = []
 
-// load and append all routes from the src/routes folder
-// const files = require.context('./../routes', true, /.ts$/i)
-// files
-//   .keys()
-//   .map(files)
-//   .map((m: any) => {
-//     routes = routes.concat(m.default)
-//   })
-
-// load and append all routes from the src/routes folder
 const routerModules = []
 
-routerModules.push(require.context('motor-media/routes', true, /.ts$/i))
-routerModules.push(require.context('motor-backend/routes', true, /.ts$/i))
-routerModules.push(require.context('motor-core/routes', true, /.ts$/i))
+import * as mediaRoutes from 'motor-media/routes/index'
+import * as backendRoutes from 'motor-backend/routes/index'
+import * as coreRoutes from 'motor-core/routes/index'
+
+routerModules.push(mediaRoutes, backendRoutes, coreRoutes)
 
 routerModules.forEach((module) => {
-  module
-    .keys()
-    .map(module)
-    .map((m: any) => {
-      routes = routes.concat(m.default)
-    })
+  Object.keys(module).map((key: string) => {
+    routes = routes.concat(module[key].default)
+  })
 })
 
 const router = createRouter({
   linkActiveClass: 'active',
-  history: createWebHistory(process.env.BASE_URL),
+  history: createWebHistory(import.meta.env.BASE_URL),
   routes,
 })
 
