@@ -2,6 +2,9 @@
 require('@rushstack/eslint-patch/modern-module-resolution')
 
 module.exports = {
+    env: {
+      es2021: true
+    },
     root: true,
     'extends': [
         'plugin:vue/vue3-essential',
