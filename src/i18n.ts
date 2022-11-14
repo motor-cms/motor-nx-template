@@ -64,7 +64,6 @@ let messages = await loadLocaleMessages(baseLocales, false)
 
 const languageModules = []
 
-
 /**
  * Motor-Media
  */
@@ -73,10 +72,10 @@ languageModules.push(
 )
 
 /**
- * Motor-Backend
+ * Motor-Admin
  */
 languageModules.push(
-    import.meta.glob('../node_modules/motor-backend/locales/**/*.json', { eager: true })
+    import.meta.glob('../node_modules/motor-admin/locales/**/*.json', { eager: true })
 )
 
 /**

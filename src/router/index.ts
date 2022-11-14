@@ -5,10 +5,10 @@ let routes: Array<RouteRecordRaw> = []
 const routerModules = []
 
 import * as mediaRoutes from 'motor-media/routes/index'
-import * as backendRoutes from 'motor-backend/routes/index'
+import * as adminRoutes from 'motor-admin/routes/index'
 import * as coreRoutes from 'motor-core/routes/index'
 
-routerModules.push(mediaRoutes, backendRoutes, coreRoutes)
+routerModules.push(mediaRoutes, adminRoutes, coreRoutes)
 
 routerModules.forEach((module) => {
   Object.keys(module).map((key: string) => {

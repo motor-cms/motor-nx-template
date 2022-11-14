@@ -24,7 +24,7 @@
     "he-tree-vue": "^3.0.3",
     "jwt-decode": "^3.1.2",
     "moment": "^2.29.4",
-    "motor-backend": "file:packages/motor-nx-backend",
+    "motor-admin": "file:packages/motor-nx-admin",
     "motor-core": "file:packages/motor-nx-core",
     "motor-media": "file:packages/motor-nx-media",
     "vee-validate": "^4.7.2",
