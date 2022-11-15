@@ -16,7 +16,9 @@ import i18n from './i18n'
 import { FontAwesomeIcon } from 'motor-core/plugins/font-awesome'
 import EditButton from 'motor-core/components/admin/cell/EditButton.vue'
 import DeleteButton from 'motor-core/components/admin/cell/DeleteButton.vue'
-import store from 'motor-core/store'
+import { createPinia } from 'pinia'
+
+const pinia = createPinia()
 
 axios.defaults.withCredentials = true
 axios.defaults.baseURL = 'http://localhost/'
@@ -24,7 +26,7 @@ axios.defaults.baseURL = 'http://localhost/'
 const app = createApp(App)
   .use(i18n)
   .use(router)
-  .use(store)
+  .use(pinia)
   .use(VueAxios, axios)
   .component('fa', FontAwesomeIcon)
   .use(Toast, toastOptions)
